@@ -7,13 +7,9 @@
 
 import UIKit
 
-public class HomeViewModel {
-    var fruits: [FruitModel?]?
-}
-
 final class FruitListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var viewModel: HomeViewModel = HomeViewModel()
+    var fruits = [FruitModel]()
     @IBOutlet weak var fruitsTableView: UITableView!
     
     var fruitsLoader: FruitsLoader?
@@ -38,7 +34,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         fruitsLoader?.getAllFruits({ result in
             switch result {
             case .success(let fruits):
-                self.viewModel.fruits = fruits
+                self.fruits = fruits
                 DispatchQueue.main.async {
                     self.fruitsTableView.reloadData()
                 }
@@ -51,7 +47,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.fruits?.count ?? 0
+        return fruits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,12 +57,12 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         if cell == nil {
             cell = FruitCell.createCell()
         }
-        cell!.setUp(fruitName: viewModel.fruits?[indexPath.row]?.name, fruitSugar: viewModel.fruits?[indexPath.row]?.nutritions?.sugar, isCitrus: viewModel.fruits?[indexPath.row]?.genus == "Citrus")
+        cell!.setUp(fruitName: fruits[indexPath.row].name, fruitSugar: fruits[indexPath.row].nutritions?.sugar, isCitrus: fruits[indexPath.row].genus == "Citrus")
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let fruit = viewModel.fruits?[indexPath.row] else { return }
+        let fruit = fruits[indexPath.row]
         navigateToDetail(fruit: fruit)
     }
     

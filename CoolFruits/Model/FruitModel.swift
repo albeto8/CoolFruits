@@ -20,9 +20,12 @@ struct FruitModel: Codable {
 }
 
 struct NutritionsModel: Codable {
-    var carbohydrates, protein, fat: Double?
-    var calories: Int?
-    var sugar: Double?
+    let carbohydrates: Double?
+    let protein: Double?
+    let fat: Double?
+    let calories: Int?
+    let sugar: Double?
+    
     enum CodingKeys: String, CodingKey {
         case carbohydrates, protein, fat, calories, sugar
     }

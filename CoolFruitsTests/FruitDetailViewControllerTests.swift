@@ -10,7 +10,7 @@ import XCTest
 
 final class FruitDetailViewControllerTests: XCTestCase {
     
-    func test_viewDidLoad_updatesLabelsWith() {
+    func test_viewDidLoad_updatesLabels() {
         let sut = makeSUT(with: FruitModel.makeAppleFruitModel())
         
         sut.loadViewIfNeeded()

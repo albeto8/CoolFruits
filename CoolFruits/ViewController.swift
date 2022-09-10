@@ -11,7 +11,7 @@ public class HomeViewModel {
     var fruits: [FruitModel?]?
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var viewModel: HomeViewModel = HomeViewModel()
     @IBOutlet weak var fruitsTableView: UITableView!

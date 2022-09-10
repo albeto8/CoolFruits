@@ -23,7 +23,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
-        RequestManager.shared.getAllFruts { fruits, error in
+        RequestManager.shared.getAllFruits { fruits, error in
             self.viewModel.fruits = fruits
             DispatchQueue.main.async {
                 self.fruitsTableView.reloadData()

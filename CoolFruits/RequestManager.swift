@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RequestManager {
+final class RequestManager {
     var session: URLSession
     var baseURL: String = "https://www.fruityvice.com/api/fruit"
     

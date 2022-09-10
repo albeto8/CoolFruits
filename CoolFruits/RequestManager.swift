@@ -8,7 +8,7 @@
 import Foundation
 
 protocol FruitsLoader {
-    func getAllFruits(_ completion: @escaping (([FruitModel?]?, Error?) -> Void))
+    func getAllFruits(_ completion: @escaping (Result<[FruitModel], RequestManager.Error>) -> Void)
 }
 
 final class RequestManager: FruitsLoader {
@@ -21,17 +21,22 @@ final class RequestManager: FruitsLoader {
         self.session = URLSession(configuration: URLSessionConfiguration.default)
     }
     
-    public func getAllFruits(_ completion: @escaping (([FruitModel?]?, Error?) -> Void)) {
+    enum Error: Swift.Error {
+        case networkError
+        case decodingError
+    }
+    
+    public func getAllFruits(_ completion: @escaping (Result<[FruitModel], Error>) -> Void) {
         session.dataTask(with: URL(string: baseURL + "/all")!) { data, response, error in
             if error != nil {
-                completion(nil, error)
+                completion(.failure(.networkError))
                 return
             } else {
                 do {
                     let decodedObject = try JSONDecoder().decode([FruitModel].self, from: data!)
-                    completion(decodedObject, nil)
+                    completion(.success(decodedObject))
                 } catch {
-                    completion(nil, NSError())
+                    completion(.failure(.decodingError))
                 }
             }
         }.resume()

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FruitListViewController.swift
 //  CoolFruits
 //
 //  Created by Luis Alejandro Zapata Gonzalez on 12-07-22.
@@ -11,7 +11,7 @@ public class HomeViewModel {
     var fruits: [FruitModel?]?
 }
 
-final class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+final class FruitListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var viewModel: HomeViewModel = HomeViewModel()
     @IBOutlet weak var fruitsTableView: UITableView!

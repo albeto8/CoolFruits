@@ -30,13 +30,5 @@ final class FruitListViewControllerTests: XCTestCase {
         sut.fruitsLoader = spy
         
         return (sut, spy)
-    }
-    
-    private class FruitsLoaderSpy: FruitsLoader {
-        var completions = [(Result<[FruitModel], RequestManager.Error>) -> Void]()
-        
-        func getAllFruits(_ completion: @escaping (Result<[FruitModel], RequestManager.Error>) -> Void) {
-            completions.append(completion)
-        }
-    }
+    }    
 }

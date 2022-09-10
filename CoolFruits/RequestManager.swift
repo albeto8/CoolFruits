@@ -7,7 +7,11 @@
 
 import Foundation
 
-final class RequestManager {
+protocol FruitsLoader {
+    func getAllFruits(_ completion: @escaping (([FruitModel?]?, Error?) -> Void))
+}
+
+final class RequestManager: FruitsLoader {
     var session: URLSession
     var baseURL: String = "https://www.fruityvice.com/api/fruit"
     

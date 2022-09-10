@@ -9,12 +9,25 @@ import XCTest
 @testable import CoolFruits
 
 final class FruitListViewControllerTests: XCTestCase {
+    
     func test_viewDidLoad_requestFruits() {
-        let (sut, spy) = makeSUT()
+        let (sut, loader) = makeSUT()
         
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(spy.completions.count, 1)
+        XCTAssertEqual(loader.completions.count, 1)
+    }
+    
+    func test_loadFruitsCompletion_rendersSuccessfullyLoadedFruit() {
+        let fruit0 = FruitModel.makeAppleFruitModel()
+        let fruit1 = FruitModel.makeLemonFruitModel()
+        let (sut, loader) = makeSUT()
+        
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.numberOfRenderedFruits(), 0)
+        
+        loader.completeFruitsLoading(with: [fruit0, fruit1], at: 0)
+        XCTAssertEqual(sut.numberOfRenderedFruits(), 2)
     }
     
     // MARK: - Helpers
@@ -25,10 +38,16 @@ final class FruitListViewControllerTests: XCTestCase {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let sut: FruitListViewController = sb.instantiateViewController(identifier: String(describing: FruitListViewController.self))
         
-        let spy = FruitsLoaderSpy()
+        let loader = FruitsLoaderSpy()
         
-        sut.fruitsLoader = spy
+        sut.fruitsLoader = loader
         
-        return (sut, spy)
-    }    
+        return (sut, loader)
+    }
+}
+
+extension FruitListViewController {
+    func numberOfRenderedFruits() -> Int {
+        return fruitsTableView.numberOfRows(inSection: 0)
+    }
 }

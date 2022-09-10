@@ -35,9 +35,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
             switch result {
             case .success(let fruits):
                 self.fruits = fruits
-                DispatchQueue.main.async {
-                    self.fruitsTableView.reloadData()
-                }
+                self.fruitsTableView.reloadData()
                 
             case .failure(let error):
                 //TODO: handle error

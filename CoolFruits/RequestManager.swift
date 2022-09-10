@@ -34,7 +34,9 @@ final class RequestManager: FruitsLoader {
             } else {
                 do {
                     let decodedObject = try JSONDecoder().decode([FruitModel].self, from: data!)
-                    completion(.success(decodedObject))
+                    DispatchQueue.main.async {
+                        completion(.success(decodedObject))
+                    }
                 } catch {
                     completion(.failure(.decodingError))
                 }

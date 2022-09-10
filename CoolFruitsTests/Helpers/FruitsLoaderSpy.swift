@@ -13,4 +13,8 @@ final class FruitsLoaderSpy: FruitsLoader {
     func getAllFruits(_ completion: @escaping (Result<[FruitModel], RequestManager.Error>) -> Void) {
         completions.append(completion)
     }
+    
+    func completeFruitsLoading(with fruits: [FruitModel], at index: Int) {
+        completions[index](.success(fruits))
+    }
 }

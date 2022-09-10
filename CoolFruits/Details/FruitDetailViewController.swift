@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class FruitDetailViewController: UIViewController {
+public final class FruitDetailViewController: UIViewController {
     @IBOutlet weak var familyLabel: UILabel!
     @IBOutlet weak var genusLabel: UILabel!
     @IBOutlet weak var nutritionLabel: UILabel!

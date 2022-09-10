@@ -22,6 +22,8 @@
 		9DA2B0912889850E00C8EC03 /* FruitDetailCitrusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */; };
 		9DA2B0932889883E00C8EC03 /* SelectedFruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */; };
 		9DA2B0952889886000C8EC03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0942889886000C8EC03 /* RequestManager.swift */; };
+		F2BA6F7C28CD4202000AA47F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA6F7B28CD4202000AA47F /* SnapshotTesting */; };
+		F2BA6F7F28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BA6F7E28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift */; };
 		F2D4CE3D28CD1CB400CAC633 /* CoolFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */; };
 		F2D4CE4428CD1E1900CAC633 /* FruitDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4CE4328CD1E1900CAC633 /* FruitDetailViewControllerTests.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +56,7 @@
 		9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitDetailCitrusViewController.xib; sourceTree = "<group>"; };
 		9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFruit.swift; sourceTree = "<group>"; };
 		9DA2B0942889886000C8EC03 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		F2BA6F7E28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SnapshotTestingHelpers.swift"; sourceTree = "<group>"; };
 		F2D4CE3A28CD1CB300CAC633 /* CoolFruitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolFruitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolFruitsTests.swift; sourceTree = "<group>"; };
 		F2D4CE4328CD1E1900CAC633 /* FruitDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewControllerTests.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2BA6F7C28CD4202000AA47F /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,9 +146,18 @@
 			path = CoolFruits;
 			sourceTree = "<group>";
 		};
+		F2BA6F7D28CD422C000AA47F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F2BA6F7E28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F2D4CE3B28CD1CB400CAC633 /* CoolFruitsTests */ = {
 			isa = PBXGroup;
 			children = (
+				F2BA6F7D28CD422C000AA47F /* Helpers */,
 				F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */,
 				F2D4CE4328CD1E1900CAC633 /* FruitDetailViewControllerTests.swift */,
 			);
@@ -185,6 +198,9 @@
 				F2D4CE3F28CD1CB400CAC633 /* PBXTargetDependency */,
 			);
 			name = CoolFruitsTests;
+			packageProductDependencies = (
+				F2BA6F7B28CD4202000AA47F /* SnapshotTesting */,
+			);
 			productName = CoolFruitsTests;
 			productReference = F2D4CE3A28CD1CB300CAC633 /* CoolFruitsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -217,6 +233,9 @@
 				Base,
 			);
 			mainGroup = 9D6DC7D3287E1E0300D96A6D;
+			packageReferences = (
+				F2BA6F7A28CD4202000AA47F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+			);
 			productRefGroup = 9D6DC7DD287E1E0300D96A6D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -273,6 +292,7 @@
 			files = (
 				F2D4CE4428CD1E1900CAC633 /* FruitDetailViewControllerTests.swift in Sources */,
 				F2D4CE3D28CD1CB400CAC633 /* CoolFruitsTests.swift in Sources */,
+				F2BA6F7F28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,6 +563,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F2BA6F7A28CD4202000AA47F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F2BA6F7B28CD4202000AA47F /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2BA6F7A28CD4202000AA47F /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9D6DC7D4287E1E0300D96A6D /* Project object */;
 }

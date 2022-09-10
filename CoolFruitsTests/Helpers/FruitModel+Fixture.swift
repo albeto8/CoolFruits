@@ -21,4 +21,18 @@ extension FruitModel {
                     calories: 52, 
                     sugar: 10.3))
     }
+    
+    static func makeLemonFruitModel() -> FruitModel {
+        FruitModel(genus: "Citrus", 
+                   name: "Lemon", 
+                   id: 2, 
+                   family: "Rutaceae", 
+                   order: nil, 
+                   nutritions: NutritionsModel(
+                    carbohydrates: nil, 
+                    protein: nil, 
+                    fat: 0.3, 
+                    calories: 29, 
+                    sugar: 2.5))
+    }
 }

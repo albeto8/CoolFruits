@@ -29,6 +29,10 @@ public final class FruitDetailViewController: UIViewController {
         familyLabel.text = "Family: \(fruit.family!)"
         genusLabel.text = "Genus: \(fruit.genus!)"
         nutritionLabel.text = getNutritionText(selectedFruit: fruit)
+        
+        if fruit.genus == "Citrus" {
+            view.backgroundColor = .systemGreen
+        }
     }
     
     func getNutritionText(selectedFruit: FruitModel) -> String {

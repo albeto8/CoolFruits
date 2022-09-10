@@ -16,6 +16,13 @@ final class FruitDetailSnapshotTests: XCTestCase {
         assert(sut, mode: .dark, device: .iPhoneX)
     }
     
+    func test_detailView_lemonFruit() {
+        let sut = makeSUT(with: FruitModel.makeLemonFruitModel())
+        
+        record(sut, mode: .light, device: .iPhoneX)
+        record(sut, mode: .dark, device: .iPhoneX)
+    }
+    
     private func makeSUT(with fruit: FruitModel,
                          file: StaticString = #file,
                          line: UInt = #line) -> FruitDetailViewController {

@@ -7,11 +7,13 @@
 
 import Foundation
 
-struct FruitModel: Codable {
-    var genus, name: String?
-    var id: Int?
-    var family, order: String?
-    var nutritions: NutritionsModel?
+struct FruitModel: Codable {    
+    let genus: String?
+    let name: String?
+    let id: Int?
+    let family, order: String?
+    let nutritions: NutritionsModel?
+    
     enum CodingKeys: String, CodingKey {
         case genus, name, id, family, order, nutritions
     }

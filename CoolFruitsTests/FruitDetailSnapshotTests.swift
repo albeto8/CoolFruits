@@ -13,6 +13,7 @@ final class FruitDetailSnapshotTests: XCTestCase {
         let sut = makeSUT(with: FruitModel.makeAppleFruitModel())
         
         assert(sut, mode: .light, device: .iPhoneX)
+        assert(sut, mode: .dark, device: .iPhoneX)
     }
     
     private func makeSUT(with fruit: FruitModel,

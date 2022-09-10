@@ -9,7 +9,7 @@ import XCTest
 @testable import CoolFruits
 
 final class FruitDetailSnapshotTests: XCTestCase {
-    func test_detailView_AppleFruit() {
+    func test_detailView_appleFruit() {
         let sut = makeSUT(with: FruitModel.makeAppleFruitModel())
         
         assert(sut, mode: .light, device: .iPhoneX)
@@ -19,8 +19,8 @@ final class FruitDetailSnapshotTests: XCTestCase {
     func test_detailView_lemonFruit() {
         let sut = makeSUT(with: FruitModel.makeLemonFruitModel())
         
-        record(sut, mode: .light, device: .iPhoneX)
-        record(sut, mode: .dark, device: .iPhoneX)
+        assert(sut, mode: .light, device: .iPhoneX)
+        assert(sut, mode: .dark, device: .iPhoneX)
     }
     
     private func makeSUT(with fruit: FruitModel,

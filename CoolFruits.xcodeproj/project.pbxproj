@@ -18,8 +18,6 @@
 		9D6DC7E7287E1E0300D96A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC7E5287E1E0300D96A6D /* Main.storyboard */; };
 		9D6DC7E9287E1E0600D96A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC7E8287E1E0600D96A6D /* Assets.xcassets */; };
 		9D6DC7EC287E1E0600D96A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D6DC7EA287E1E0600D96A6D /* LaunchScreen.storyboard */; };
-		9DA2B08F288984FD00C8EC03 /* FruitDetailCitrusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B08E288984FD00C8EC03 /* FruitDetailCitrusViewController.swift */; };
-		9DA2B0912889850E00C8EC03 /* FruitDetailCitrusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */; };
 		9DA2B0932889883E00C8EC03 /* SelectedFruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */; };
 		9DA2B0952889886000C8EC03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0942889886000C8EC03 /* RequestManager.swift */; };
 		F2BA6F7C28CD4202000AA47F /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F2BA6F7B28CD4202000AA47F /* SnapshotTesting */; };
@@ -55,8 +53,6 @@
 		9D6DC7E8287E1E0600D96A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D6DC7EB287E1E0600D96A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D6DC7ED287E1E0600D96A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9DA2B08E288984FD00C8EC03 /* FruitDetailCitrusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailCitrusViewController.swift; sourceTree = "<group>"; };
-		9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitDetailCitrusViewController.xib; sourceTree = "<group>"; };
 		9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFruit.swift; sourceTree = "<group>"; };
 		9DA2B0942889886000C8EC03 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		F2BA6F7E28CD4235000AA47F /* XCTestCase+SnapshotTestingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+SnapshotTestingHelpers.swift"; sourceTree = "<group>"; };
@@ -101,8 +97,6 @@
 			children = (
 				9D15A4362887884300896AC4 /* FruitDetailViewController.swift */,
 				9D15A4382887884F00896AC4 /* FruitDetailViewController.xib */,
-				9DA2B08E288984FD00C8EC03 /* FruitDetailCitrusViewController.swift */,
-				9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -265,7 +259,6 @@
 				9D6DC7EC287E1E0600D96A6D /* LaunchScreen.storyboard in Resources */,
 				9D6DC7E9287E1E0600D96A6D /* Assets.xcassets in Resources */,
 				9D6DC7E7287E1E0300D96A6D /* Main.storyboard in Resources */,
-				9DA2B0912889850E00C8EC03 /* FruitDetailCitrusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +285,6 @@
 				9D15A43C2887896500896AC4 /* FruitModel.swift in Sources */,
 				9DA2B0952889886000C8EC03 /* RequestManager.swift in Sources */,
 				9D15A4372887884300896AC4 /* FruitDetailViewController.swift in Sources */,
-				9DA2B08F288984FD00C8EC03 /* FruitDetailCitrusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

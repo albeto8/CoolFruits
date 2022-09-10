@@ -54,12 +54,10 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         return cell!
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SelectedFruit.fruit = viewModel.fruits?[indexPath.row]
         navigateToDetail()
     }
-    var selectedFruit: FruitModel?
     
     func navigateToDetail() {
         let vc = FruitDetailViewController(fruit: SelectedFruit.fruit!)

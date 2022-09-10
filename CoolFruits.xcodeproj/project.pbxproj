@@ -22,7 +22,18 @@
 		9DA2B0912889850E00C8EC03 /* FruitDetailCitrusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */; };
 		9DA2B0932889883E00C8EC03 /* SelectedFruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */; };
 		9DA2B0952889886000C8EC03 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA2B0942889886000C8EC03 /* RequestManager.swift */; };
+		F2D4CE3D28CD1CB400CAC633 /* CoolFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F2D4CE3E28CD1CB400CAC633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D6DC7D4287E1E0300D96A6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D6DC7DB287E1E0300D96A6D;
+			remoteInfo = CoolFruits;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9D15A43128877F7600896AC4 /* FruitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCell.swift; sourceTree = "<group>"; };
@@ -42,10 +53,19 @@
 		9DA2B0902889850E00C8EC03 /* FruitDetailCitrusViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitDetailCitrusViewController.xib; sourceTree = "<group>"; };
 		9DA2B0922889883E00C8EC03 /* SelectedFruit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFruit.swift; sourceTree = "<group>"; };
 		9DA2B0942889886000C8EC03 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		F2D4CE3A28CD1CB300CAC633 /* CoolFruitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolFruitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolFruitsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9D6DC7D9287E1E0300D96A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D4CE3728CD1CB300CAC633 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -88,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6DC7DE287E1E0300D96A6D /* CoolFruits */,
+				F2D4CE3B28CD1CB400CAC633 /* CoolFruitsTests */,
 				9D6DC7DD287E1E0300D96A6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				9D6DC7DC287E1E0300D96A6D /* CoolFruits.app */,
+				F2D4CE3A28CD1CB300CAC633 /* CoolFruitsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -118,6 +140,14 @@
 			path = CoolFruits;
 			sourceTree = "<group>";
 		};
+		F2D4CE3B28CD1CB400CAC633 /* CoolFruitsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */,
+			);
+			path = CoolFruitsTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +168,24 @@
 			productReference = 9D6DC7DC287E1E0300D96A6D /* CoolFruits.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F2D4CE3928CD1CB300CAC633 /* CoolFruitsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F2D4CE4228CD1CB400CAC633 /* Build configuration list for PBXNativeTarget "CoolFruitsTests" */;
+			buildPhases = (
+				F2D4CE3628CD1CB300CAC633 /* Sources */,
+				F2D4CE3728CD1CB300CAC633 /* Frameworks */,
+				F2D4CE3828CD1CB300CAC633 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F2D4CE3F28CD1CB400CAC633 /* PBXTargetDependency */,
+			);
+			name = CoolFruitsTests;
+			productName = CoolFruitsTests;
+			productReference = F2D4CE3A28CD1CB300CAC633 /* CoolFruitsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -150,6 +198,10 @@
 				TargetAttributes = {
 					9D6DC7DB287E1E0300D96A6D = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					F2D4CE3928CD1CB300CAC633 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 9D6DC7DB287E1E0300D96A6D;
 					};
 				};
 			};
@@ -167,6 +219,7 @@
 			projectRoot = "";
 			targets = (
 				9D6DC7DB287E1E0300D96A6D /* CoolFruits */,
+				F2D4CE3928CD1CB300CAC633 /* CoolFruitsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -182,6 +235,13 @@
 				9D6DC7E9287E1E0600D96A6D /* Assets.xcassets in Resources */,
 				9D6DC7E7287E1E0300D96A6D /* Main.storyboard in Resources */,
 				9DA2B0912889850E00C8EC03 /* FruitDetailCitrusViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F2D4CE3828CD1CB300CAC633 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +264,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F2D4CE3628CD1CB300CAC633 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2D4CE3D28CD1CB400CAC633 /* CoolFruitsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F2D4CE3F28CD1CB400CAC633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D6DC7DB287E1E0300D96A6D /* CoolFruits */;
+			targetProxy = F2D4CE3E28CD1CB400CAC633 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9D6DC7E5287E1E0300D96A6D /* Main.storyboard */ = {
@@ -396,6 +472,42 @@
 			};
 			name = Release;
 		};
+		F2D4CE4028CD1CB400CAC633 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4ZUPHQCZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mario.CoolFruitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolFruits.app/CoolFruits";
+			};
+			name = Debug;
+		};
+		F2D4CE4128CD1CB400CAC633 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4ZUPHQCZR;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mario.CoolFruitsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolFruits.app/CoolFruits";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -413,6 +525,15 @@
 			buildConfigurations = (
 				9D6DC7F1287E1E0600D96A6D /* Debug */,
 				9D6DC7F2287E1E0600D96A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F2D4CE4228CD1CB400CAC633 /* Build configuration list for PBXNativeTarget "CoolFruitsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F2D4CE4028CD1CB400CAC633 /* Debug */,
+				F2D4CE4128CD1CB400CAC633 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

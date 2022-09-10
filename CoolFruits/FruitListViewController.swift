@@ -57,21 +57,9 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SelectedFruit.fruit = viewModel.fruits?[indexPath.row]
-        if SelectedFruit.fruit?.genus == "Citrus" {
-            navigateToCitrusDetail()
-        } else {
-            navigateToDetail()
-        }
+        navigateToDetail()
     }
     var selectedFruit: FruitModel?
-    
-    func navigateToCitrusDetail() {
-        let vc = FruitDetailViewController(fruit: SelectedFruit.fruit!)
-        vc.title = SelectedFruit.fruit?.name
-        if let navigator = navigationController {
-            navigator.pushViewController(vc, animated: true)
-        }
-    }
     
     func navigateToDetail() {
         let vc = FruitDetailViewController(fruit: SelectedFruit.fruit!)

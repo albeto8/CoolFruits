@@ -18,10 +18,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        self.fruitsTableView.register(UINib.init(nibName: "CounterCellView", bundle: nil), forCellReuseIdentifier: "counterCell")
-        self.fruitsTableView.delegate = self
-        self.fruitsTableView.dataSource = self
+        configureTableView()
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
         self.navigationController?.navigationBar.tintColor = UIColor.black
@@ -32,6 +29,12 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
                 self.fruitsTableView.reloadData()
             }
         }
+    }
+    
+    private func configureTableView() {
+        self.fruitsTableView.register(UINib.init(nibName: "CounterCellView", bundle: nil), forCellReuseIdentifier: "counterCell")
+        self.fruitsTableView.delegate = self
+        self.fruitsTableView.dataSource = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

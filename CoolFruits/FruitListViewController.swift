@@ -25,18 +25,22 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
-        fruitsLoader?.getAllFruits { fruits, error in
-            self.viewModel.fruits = fruits
-            DispatchQueue.main.async {
-                self.fruitsTableView.reloadData()
-            }
-        }
+        loadFruits()
     }
     
     private func configureTableView() {
         self.fruitsTableView.register(UINib.init(nibName: "CounterCellView", bundle: nil), forCellReuseIdentifier: "counterCell")
         self.fruitsTableView.delegate = self
         self.fruitsTableView.dataSource = self
+    }
+    
+    private func loadFruits() {
+        fruitsLoader?.getAllFruits { fruits, error in
+            self.viewModel.fruits = fruits
+            DispatchQueue.main.async {
+                self.fruitsTableView.reloadData()
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

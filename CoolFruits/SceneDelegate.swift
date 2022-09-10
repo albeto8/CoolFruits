@@ -26,6 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let controller: FruitListViewController = sb.instantiateViewController(identifier: String(describing: FruitListViewController.self))
         
+        controller.fruitsLoader = RequestManager.shared
+        
         return controller
     }
 }

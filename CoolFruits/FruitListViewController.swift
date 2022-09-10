@@ -16,6 +16,8 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     var viewModel: HomeViewModel = HomeViewModel()
     @IBOutlet weak var fruitsTableView: UITableView!
     
+    var fruitsLoader: FruitsLoader?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -23,7 +25,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
         self.navigationController?.navigationBar.tintColor = UIColor.black
         
-        RequestManager.shared.getAllFruits { fruits, error in
+        fruitsLoader?.getAllFruits { fruits, error in
             self.viewModel.fruits = fruits
             DispatchQueue.main.async {
                 self.fruitsTableView.reloadData()

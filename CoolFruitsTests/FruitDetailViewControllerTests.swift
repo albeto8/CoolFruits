@@ -11,7 +11,7 @@ import XCTest
 final class FruitDetailViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_updatesLabelsWith() {
-        let sut = makeSUT(with: makeAppleFruitModel())
+        let sut = makeSUT(with: FruitModel.makeAppleFruitModel())
         
         sut.loadViewIfNeeded()
         
@@ -28,19 +28,5 @@ final class FruitDetailViewControllerTests: XCTestCase {
         let sut = FruitDetailViewController(fruit: fruit)
         
         return sut
-    }
-    
-    private func makeAppleFruitModel() -> FruitModel {
-        FruitModel(genus: "Malus", 
-                   name: "Apple", 
-                   id: 1, 
-                   family: "Rosaceae", 
-                   order: nil, 
-                   nutritions: NutritionsModel(
-                    carbohydrates: nil, 
-                    protein: nil, 
-                    fat: 0.4, 
-                    calories: 52, 
-                    sugar: 10.3))
     }
 }

@@ -11,8 +11,7 @@ import XCTest
 final class FruitDetailViewControllerTests: XCTestCase {
     
     func test_viewDidLoad_updatesLabelsWith() {
-        let sut = makeSUT()
-        SelectedFruit.fruit = makeAppleFruitModel()
+        let sut = makeSUT(with: makeAppleFruitModel())
         
         sut.loadViewIfNeeded()
         
@@ -23,8 +22,10 @@ final class FruitDetailViewControllerTests: XCTestCase {
     
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> FruitDetailViewController {
-        let sut = FruitDetailViewController(nibName: "FruitDetailViewController", bundle: .main)
+    private func makeSUT(with fruit: FruitModel,
+                         file: StaticString = #file,
+                         line: UInt = #line) -> FruitDetailViewController {
+        let sut = FruitDetailViewController(fruit: fruit)
         
         return sut
     }

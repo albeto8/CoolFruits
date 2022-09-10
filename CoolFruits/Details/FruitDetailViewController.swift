@@ -13,14 +13,24 @@ public final class FruitDetailViewController: UIViewController {
     @IBOutlet weak var genusLabel: UILabel!
     @IBOutlet weak var nutritionLabel: UILabel!
     
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        familyLabel.text = "Family: \(SelectedFruit.fruit!.family!)"
-        genusLabel.text = "Genus: \(SelectedFruit.fruit!.genus!)"
-        nutritionLabel.text = getNutritionText(selectedFruit: SelectedFruit.fruit!)
+    private let fruit: FruitModel
+    
+    init(fruit: FruitModel) {
+        self.fruit = fruit
+        super.init(nibName: "FruitDetailViewController", bundle: .main)
     }
     
-
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        familyLabel.text = "Family: \(fruit.family!)"
+        genusLabel.text = "Genus: \(fruit.genus!)"
+        nutritionLabel.text = getNutritionText(selectedFruit: fruit)
+    }
+    
     func getNutritionText(selectedFruit: FruitModel) -> String {
         var text = String()
         text += "Sugar: " + String(selectedFruit.nutritions?.sugar ?? 0)

@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var selectedFruit: FruitModel?
     
     func navigateToCitrusDetail() {
-        let vc = FruitDetailViewController(nibName: "FruitDetailCitrusViewController", bundle: nil)
+        let vc = FruitDetailViewController(fruit: SelectedFruit.fruit!)
         vc.title = SelectedFruit.fruit?.name
         if let navigator = navigationController {
             navigator.pushViewController(vc, animated: true)
@@ -69,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func navigateToDetail() {
-        let vc = FruitDetailViewController(nibName: "FruitDetailViewController", bundle: nil)
+        let vc = FruitDetailViewController(fruit: SelectedFruit.fruit!)
         vc.title = SelectedFruit.fruit?.name
         if let navigator = navigationController {
             navigator.pushViewController(vc, animated: true)

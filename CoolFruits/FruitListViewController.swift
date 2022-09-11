@@ -53,12 +53,11 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FruitCell") as? FruitCell else {
             return UITableViewCell()
         }
+        let fruit = fruits[indexPath.row]
         
-        let sugar = fruits[indexPath.row].nutritions?.sugar ?? 0
-        
-        cell.setUp(fruitName: fruits[indexPath.row].name, 
-                    fruitSugar: sugar, 
-                    isCitrus: fruits[indexPath.row].isCitrus)
+        cell.setUp(fruitName: fruit.name, 
+                   fruitSugar: fruit.nutritions?.sugar ?? 0, 
+                   isCitrus: fruit.isCitrus)
         return cell
     }
     

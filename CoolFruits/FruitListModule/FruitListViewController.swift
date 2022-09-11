@@ -71,10 +71,6 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let fruit = fruits[indexPath.row]
-        navigateToDetail(fruit: fruit)
-    }
-    
-    func navigateToDetail(fruit: FruitModel) {
         selection?(fruit)
     }
 }

@@ -34,17 +34,21 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     private func loadFruits() {
-        fruitsLoader?.getAllFruits({ result in
+        fruitsLoader?.getAllFruits({ [weak self] result in
             switch result {
             case .success(let fruits):
-                self.fruits = fruits
-                self.fruitsTableView.reloadData()
+                self?.display(fruits)
                 
             case .failure(let error):
                 //TODO: handle error
                 print(error)
             }
         })
+    }
+    
+    func display(_ fruits: ([FruitModel])) {
+        self.fruits = fruits
+        self.fruitsTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

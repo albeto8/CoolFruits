@@ -8,10 +8,12 @@
 import UIKit
 
 final class FruitListComposer {
-    static func composeWith(loader: FruitsLoader) -> FruitListViewController {
+    static func composeWith(loader: FruitsLoader, 
+                            selection: @escaping (FruitModel) -> Void) -> FruitListViewController {
         let controller = makeController()
         
         controller.fruitsLoader = RequestManager.shared
+        controller.selection = selection
         
         return controller
     }

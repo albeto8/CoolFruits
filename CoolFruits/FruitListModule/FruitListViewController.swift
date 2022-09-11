@@ -13,6 +13,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var fruitsTableView: UITableView!
     
     var fruitsLoader: FruitsLoader?
+    var selection: ((FruitModel) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,10 +75,6 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func navigateToDetail(fruit: FruitModel) {
-        let vc = FruitDetailViewController(fruit: fruit)
-        vc.title = fruit.name
-        if let navigator = navigationController {
-            navigator.pushViewController(vc, animated: true)
-        }
+        selection?(fruit)
     }
 }

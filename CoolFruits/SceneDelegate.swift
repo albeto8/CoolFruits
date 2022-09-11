@@ -10,6 +10,8 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    
+    private var navigationController = UINavigationController()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -19,10 +21,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let loader = RequestManager.shared
         
-        let navigationController = UINavigationController(rootViewController: FruitListComposer.composeWith(loader: loader))
+        navigationController = UINavigationController(rootViewController: FruitListComposer.composeWith(loader: loader, selection: navigateToDetail))
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+    }
+    
+    func navigateToDetail(fruit: FruitModel) {
+        let detailViewController = FruitDetailViewController(fruit: fruit)
+        detailViewController.title = fruit.name
+        navigationController.pushViewController(detailViewController, animated: true)
     }
 }
 

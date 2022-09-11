@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FruitModel: Codable {    
+struct FruitModel: Codable, Equatable {    
     let genus: String?
     let name: String
     let id: Int?
@@ -23,7 +23,7 @@ struct FruitModel: Codable {
     }
 }
 
-struct NutritionsModel: Codable {
+struct NutritionsModel: Codable, Equatable {
     let carbohydrates: Double?
     let protein: Double?
     let fat: Double?

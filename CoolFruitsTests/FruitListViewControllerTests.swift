@@ -30,13 +30,27 @@ final class FruitListViewControllerTests: XCTestCase {
         assertThat(sut, isRendering: [fruit0, fruit1])
     }
     
+    func test_fruitSelection_notifiesHandler() {
+        let fruit0 = FruitModel.makeAppleFruitModel()
+        var selectedFruits = [FruitModel]()
+        let (sut, loader) = makeSUT(selection: { selectedFruits.append($0) })
+        
+        sut.loadViewIfNeeded()
+        loader.completeFruitsLoading(with: [fruit0], at: 0)
+
+        sut.simulateTapOnFruit(at: 0)
+        XCTAssertEqual(selectedFruits, [fruit0])
+    }
+    
     // MARK: - Helpers
     
-    private func makeSUT(file: StaticString = #file, 
+    private func makeSUT(selection: @escaping (FruitModel) -> Void = { _ in },
+                         file: StaticString = #file, 
                          line: UInt = #line) -> (sut: FruitListViewController,
                                                  loader: FruitsLoaderSpy) {
         let loader = FruitsLoaderSpy()
-        let sut = FruitListComposer.composeWith(loader: loader)
+        let sut = FruitListComposer.composeWith(loader: loader,
+                                                selection: selection)
         
         sut.fruitsLoader = loader
         
@@ -97,5 +111,11 @@ extension FruitListViewController {
         let ds = fruitsTableView.dataSource
         let index = IndexPath(row: row, section: 0)
         return ds?.tableView(fruitsTableView, cellForRowAt: index)
+    }
+    
+    func simulateTapOnFruit(at row: Int) {
+        let delegate = fruitsTableView.delegate
+        let index = IndexPath(row: row, section: 0)
+        delegate?.tableView?(fruitsTableView, didSelectRowAt: index)
     }
 }

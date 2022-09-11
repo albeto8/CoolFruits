@@ -25,7 +25,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     }
     
     private func configureTableView() {
-        self.fruitsTableView.register(UINib.init(nibName: "CounterCellView", bundle: nil), forCellReuseIdentifier: "counterCell")
+        self.fruitsTableView.register(UINib.init(nibName: "FruitCell", bundle: nil), forCellReuseIdentifier: "FruitCell")
         self.fruitsTableView.delegate = self
         self.fruitsTableView.dataSource = self
     }
@@ -50,18 +50,16 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "FruitCell") as? FruitCell
-        
-        if cell == nil {
-            cell = FruitCell.createCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FruitCell") as? FruitCell else {
+            return UITableViewCell()
         }
         
         let sugar = fruits[indexPath.row].nutritions?.sugar ?? 0
         
-        cell!.setUp(fruitName: fruits[indexPath.row].name, 
+        cell.setUp(fruitName: fruits[indexPath.row].name, 
                     fruitSugar: sugar, 
                     isCitrus: fruits[indexPath.row].isCitrus)
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

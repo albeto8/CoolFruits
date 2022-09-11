@@ -20,10 +20,4 @@ public class FruitCell: UITableViewCell {
         fruitNameLabel.text = "\(prefix) \(fruitName)"
         fruitSugarLabel.text = "(Sugar:" + String(fruitSugar) + ")"
     }
-    
-    class func createCell() -> FruitCell? {
-        let nib = UINib(nibName: "FruitCell", bundle: nil)
-        let cell = nib.instantiate(withOwner: self, options: nil).last as? FruitCell
-        return cell
-    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 struct FruitModel: Codable {    
     let genus: String?
-    let name: String?
+    let name: String
     let id: Int?
     let family, order: String?
     let nutritions: NutritionsModel?

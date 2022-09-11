@@ -15,11 +15,7 @@ public class FruitCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    public func setUp(fruitName: String, fruitSugar: Double?, isCitrus: Bool) {
-        guard let fruitSugar = fruitSugar else {
-            return
-        }
-        
+    public func setUp(fruitName: String, fruitSugar: Double, isCitrus: Bool) {
         let prefix = "\(isCitrus ? " * " : "")"
         fruitNameLabel.text = "\(prefix) \(fruitName)"
         fruitSugarLabel.text = "(Sugar:" + String(fruitSugar) + ")"

@@ -178,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				F2EB542D28CD69D6003EF6D9 /* FruitListComposer.swift */,
-				9D15A43028877F5A00896AC4 /* Cells */,
 				9D6DC7E3287E1E0300D96A6D /* FruitListViewController.swift */,
+				9D15A43028877F5A00896AC4 /* Cells */,
 			);
 			path = FruitListModule;
 			sourceTree = "<group>";

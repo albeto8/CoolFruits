@@ -9,7 +9,7 @@ import UIKit
 
 final class FruitListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var fruits = [FruitModel]()
+    private var fruits = [FruitModel]()
     @IBOutlet weak var fruitsTableView: UITableView!
     
     var fruitsLoader: FruitsLoader?

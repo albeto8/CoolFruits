@@ -28,8 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func navigateToDetail(fruit: FruitModel) {
-        let detailViewController = FruitDetailViewController(fruit: fruit)
-        detailViewController.title = fruit.name
+        let detailViewController = FruitDetailsComposer.composeWith(fruit: fruit)
         navigationController.pushViewController(detailViewController, animated: true)
     }
 }

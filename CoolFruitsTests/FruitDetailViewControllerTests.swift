@@ -25,7 +25,7 @@ final class FruitDetailViewControllerTests: XCTestCase {
     private func makeSUT(with fruit: FruitModel,
                          file: StaticString = #file,
                          line: UInt = #line) -> FruitDetailViewController {
-        let sut = FruitDetailViewController(fruit: fruit)
+        let sut = FruitDetailsComposer.composeWith(fruit: fruit)
         
         trackForMemoryLeaks(sut, file: file, line: line)
         

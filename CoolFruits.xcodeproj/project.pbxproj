@@ -30,6 +30,7 @@
 		F2D4CE3D28CD1CB400CAC633 /* CoolFruitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */; };
 		F2D4CE4428CD1E1900CAC633 /* FruitDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2D4CE4328CD1E1900CAC633 /* FruitDetailViewControllerTests.swift */; };
 		F2EB542E28CD69D6003EF6D9 /* FruitListComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB542D28CD69D6003EF6D9 /* FruitListComposer.swift */; };
+		F2EB543228CD70AC003EF6D9 /* FruitDetailsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EB543128CD70AC003EF6D9 /* FruitDetailsComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		F2D4CE3C28CD1CB400CAC633 /* CoolFruitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolFruitsTests.swift; sourceTree = "<group>"; };
 		F2D4CE4328CD1E1900CAC633 /* FruitDetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		F2EB542D28CD69D6003EF6D9 /* FruitListComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitListComposer.swift; sourceTree = "<group>"; };
+		F2EB543128CD70AC003EF6D9 /* FruitDetailsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitDetailsComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			children = (
 				9D15A4362887884300896AC4 /* FruitDetailViewController.swift */,
 				9D15A4382887884F00896AC4 /* FruitDetailViewController.xib */,
+				F2EB543128CD70AC003EF6D9 /* FruitDetailsComposer.swift */,
 			);
 			path = FruitDetailsModule;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2EB542E28CD69D6003EF6D9 /* FruitListComposer.swift in Sources */,
+				F2EB543228CD70AC003EF6D9 /* FruitDetailsComposer.swift in Sources */,
 				9D15A43228877F7600896AC4 /* FruitCell.swift in Sources */,
 				9D6DC7E4287E1E0300D96A6D /* FruitListViewController.swift in Sources */,
 				9D6DC7E0287E1E0300D96A6D /* AppDelegate.swift in Sources */,

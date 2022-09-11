@@ -32,14 +32,18 @@ final class FruitListViewControllerTests: XCTestCase {
     
     func test_fruitSelection_notifiesHandler() {
         let fruit0 = FruitModel.makeAppleFruitModel()
+        let fruit1 = FruitModel.makeLemonFruitModel()
         var selectedFruits = [FruitModel]()
         let (sut, loader) = makeSUT(selection: { selectedFruits.append($0) })
         
         sut.loadViewIfNeeded()
-        loader.completeFruitsLoading(with: [fruit0], at: 0)
+        loader.completeFruitsLoading(with: [fruit0, fruit1], at: 0)
 
         sut.simulateTapOnFruit(at: 0)
         XCTAssertEqual(selectedFruits, [fruit0])
+        
+        sut.simulateTapOnFruit(at: 1)
+        XCTAssertEqual(selectedFruits, [fruit0, fruit1])
     }
     
     // MARK: - Helpers

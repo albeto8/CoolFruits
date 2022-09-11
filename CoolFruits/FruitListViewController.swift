@@ -17,10 +17,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.navigationController?.navigationBar.topItem?.title = "Fruitspedia"
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        
+        configureNavigation()
         loadFruits()
     }
     
@@ -28,6 +25,12 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         self.fruitsTableView.register(UINib.init(nibName: "FruitCell", bundle: nil), forCellReuseIdentifier: "FruitCell")
         self.fruitsTableView.delegate = self
         self.fruitsTableView.dataSource = self
+    }
+    
+    private func configureNavigation() {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.topItem?.title = "Fruitspedia"
+        navigationController?.navigationBar.tintColor = UIColor.black
     }
     
     private func loadFruits() {

@@ -14,6 +14,10 @@ struct FruitModel: Codable {
     let family, order: String?
     let nutritions: NutritionsModel?
     
+    var isCitrus: Bool {
+        genus == "Citrus"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case genus, name, id, family, order, nutritions
     }

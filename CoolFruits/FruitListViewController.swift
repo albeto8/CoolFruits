@@ -60,7 +60,7 @@ final class FruitListViewController: UIViewController, UITableViewDataSource, UI
         
         cell!.setUp(fruitName: fruits[indexPath.row].name, 
                     fruitSugar: sugar, 
-                    isCitrus: fruits[indexPath.row].genus == "Citrus")
+                    isCitrus: fruits[indexPath.row].isCitrus)
         return cell!
     }
     

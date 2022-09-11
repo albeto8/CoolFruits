@@ -30,7 +30,7 @@ public final class FruitDetailViewController: UIViewController {
         genusLabel.text = "Genus: \(fruit.genus!)"
         nutritionLabel.text = getNutritionText(selectedFruit: fruit)
         
-        if fruit.genus == "Citrus" {
+        if fruit.isCitrus {
             view.backgroundColor = .systemGreen
         }
     }

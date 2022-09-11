@@ -23,8 +23,9 @@ public class FruitCell: UITableViewCell {
         guard let fruitSugar = fruitSugar else {
             return
         }
-
-        fruitNameLabel.text = "\(isCitrus ? " * " : "") \(fruitName)"
+        
+        let prefix = "\(isCitrus ? " * " : "")"
+        fruitNameLabel.text = "\(prefix) \(fruitName)"
         fruitSugarLabel.text = "(Sugar:" + String(fruitSugar) + ")"
     }
     

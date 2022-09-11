@@ -89,22 +89,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9D15A43028877F5A00896AC4 /* TableView */ = {
+		9D15A43028877F5A00896AC4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				9D15A43128877F7600896AC4 /* FruitCell.swift */,
 				9D15A43328877FBE00896AC4 /* FruitCell.xib */,
 			);
-			path = TableView;
+			path = Cells;
 			sourceTree = "<group>";
 		};
-		9D15A4352887882E00896AC4 /* Details */ = {
+		9D15A4352887882E00896AC4 /* FruitDetailsModule */ = {
 			isa = PBXGroup;
 			children = (
 				9D15A4362887884300896AC4 /* FruitDetailViewController.swift */,
 				9D15A4382887884F00896AC4 /* FruitDetailViewController.xib */,
 			);
-			path = Details;
+			path = FruitDetailsModule;
 			sourceTree = "<group>";
 		};
 		9D15A43A2887895500896AC4 /* Model */ = {
@@ -136,18 +136,16 @@
 		9D6DC7DE287E1E0300D96A6D /* CoolFruits */ = {
 			isa = PBXGroup;
 			children = (
+				F2EB543028CD6AD3003EF6D9 /* Networking */,
 				9D15A43A2887895500896AC4 /* Model */,
-				9D15A4352887882E00896AC4 /* Details */,
-				9D15A43028877F5A00896AC4 /* TableView */,
+				F2EB542F28CD6AA9003EF6D9 /* FruitListModule */,
+				9D15A4352887882E00896AC4 /* FruitDetailsModule */,
 				9D6DC7DF287E1E0300D96A6D /* AppDelegate.swift */,
 				9D6DC7E1287E1E0300D96A6D /* SceneDelegate.swift */,
-				9D6DC7E3287E1E0300D96A6D /* FruitListViewController.swift */,
-				9DA2B0942889886000C8EC03 /* RequestManager.swift */,
 				9D6DC7E5287E1E0300D96A6D /* Main.storyboard */,
 				9D6DC7E8287E1E0600D96A6D /* Assets.xcassets */,
 				9D6DC7EA287E1E0600D96A6D /* LaunchScreen.storyboard */,
 				9D6DC7ED287E1E0600D96A6D /* Info.plist */,
-				F2EB542D28CD69D6003EF6D9 /* FruitListComposer.swift */,
 			);
 			path = CoolFruits;
 			sourceTree = "<group>";
@@ -174,6 +172,24 @@
 				F2BA6F8628CD5561000AA47F /* FruitListViewControllerTests.swift */,
 			);
 			path = CoolFruitsTests;
+			sourceTree = "<group>";
+		};
+		F2EB542F28CD6AA9003EF6D9 /* FruitListModule */ = {
+			isa = PBXGroup;
+			children = (
+				F2EB542D28CD69D6003EF6D9 /* FruitListComposer.swift */,
+				9D15A43028877F5A00896AC4 /* Cells */,
+				9D6DC7E3287E1E0300D96A6D /* FruitListViewController.swift */,
+			);
+			path = FruitListModule;
+			sourceTree = "<group>";
+		};
+		F2EB543028CD6AD3003EF6D9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9DA2B0942889886000C8EC03 /* RequestManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

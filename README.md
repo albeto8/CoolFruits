@@ -9,3 +9,5 @@
 
 En caso de cualquier duda o inconveniente estoy para ayudarte lalejzapata@falabella.cl, saludos!
 # CoolFruits
+
+## Los snapshot test fueron grabados con un simulador iPhone 13 y Xcode versión 13.3, usar otro simulador o versión de Xcode podría resultar en fallas en los snapshot test

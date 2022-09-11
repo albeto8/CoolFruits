@@ -15,11 +15,7 @@ public class FruitCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    public func setUp(fruitName: String?, fruitSugar: Double?, isCitrus: Bool) {
-        guard let fruitName = fruitName else {
-            return
-        }
-
+    public func setUp(fruitName: String, fruitSugar: Double?, isCitrus: Bool) {
         guard let fruitSugar = fruitSugar else {
             return
         }

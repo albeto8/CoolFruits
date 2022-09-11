@@ -73,7 +73,7 @@ final class FruitListViewControllerTests: XCTestCase {
             return XCTFail("Expected \(FruitCell.self) instance, got \(String(describing: view)) instead", file: file, line: line)
         }
         let isCitrus = fruit.genus == "Citrus"
-        let showedFruitText = "\(isCitrus ? " * " : "") \(fruit.name ?? "")"
+        let showedFruitText = "\(isCitrus ? " * " : "") \(fruit.name )"
         
         XCTAssertEqual(cell.fruitNameLabel.text!, showedFruitText, "Expected fruit name text to be \(String(describing: showedFruitText)) for  view at index (\(index))", file: file, line: line)
         

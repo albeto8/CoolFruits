@@ -16,19 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        let navigationController = UINavigationController(rootViewController: makeController())
+        
+        let loader = RequestManager.shared
+        
+        let navigationController = UINavigationController(rootViewController: FruitListComposer.composeWith(loader: loader))
         
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
-    }
-    
-    func makeController() -> FruitListViewController {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let controller: FruitListViewController = sb.instantiateViewController(identifier: String(describing: FruitListViewController.self))
-        
-        controller.fruitsLoader = RequestManager.shared
-        
-        return controller
     }
 }
 

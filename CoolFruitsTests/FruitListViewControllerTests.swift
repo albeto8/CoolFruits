@@ -35,10 +35,8 @@ final class FruitListViewControllerTests: XCTestCase {
     private func makeSUT(file: StaticString = #file, 
                          line: UInt = #line) -> (sut: FruitListViewController,
                                                  loader: FruitsLoaderSpy) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let sut: FruitListViewController = sb.instantiateViewController(identifier: String(describing: FruitListViewController.self))
-        
         let loader = FruitsLoaderSpy()
+        let sut = FruitListComposer.composeWith(loader: loader)
         
         sut.fruitsLoader = loader
         

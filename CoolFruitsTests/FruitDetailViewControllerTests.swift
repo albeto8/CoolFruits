@@ -27,6 +27,8 @@ final class FruitDetailViewControllerTests: XCTestCase {
                          line: UInt = #line) -> FruitDetailViewController {
         let sut = FruitDetailViewController(fruit: fruit)
         
+        trackForMemoryLeaks(sut, file: file, line: line)
+        
         return sut
     }
 }

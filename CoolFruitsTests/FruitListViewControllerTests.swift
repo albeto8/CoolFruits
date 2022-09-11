@@ -42,6 +42,9 @@ final class FruitListViewControllerTests: XCTestCase {
         
         sut.fruitsLoader = loader
         
+        trackForMemoryLeaks(sut, file: file, line: line)
+        trackForMemoryLeaks(loader, file: file, line: line)
+        
         return (sut, loader)
     }
     
